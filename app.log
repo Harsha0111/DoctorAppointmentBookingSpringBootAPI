@@ -1,0 +1,753 @@
+2022-09-05 14:45:15 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 17432 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 14:45:15 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 14:45:17 - INFO - Starting service [Tomcat]
+2022-09-05 14:45:17 - INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 14:45:17 - INFO - Initializing Spring embedded WebApplicationContext
+2022-09-05 14:45:18 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 14:45:18 - INFO - HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-05 14:45:18 - INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-05 14:45:18 - INFO - HikariPool-1 - Starting...
+2022-09-05 14:45:19 - INFO - HikariPool-1 - Start completed.
+2022-09-05 14:45:19 - INFO - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-09-05 14:45:19 - ERROR - Failed to initialize JPA EntityManagerFactory: mappedBy reference an unknown target entity property: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser.dUser in com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser.dUsers
+2022-09-05 14:45:19 - INFO - HikariPool-1 - Shutdown initiated...
+2022-09-05 14:45:19 - INFO - HikariPool-1 - Shutdown completed.
+2022-09-05 14:45:19 - INFO - Stopping service [Tomcat]
+2022-09-05 14:45:20 - ERROR - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser.dUser in com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser.dUsers
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.nseit.DoctorAppointmentBookingSpringBootAPI.DoctorAppointmentBookingSpringBootApiApplication.main(DoctorAppointmentBookingSpringBootApiApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser.dUser in com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser.dUsers
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:875)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:826)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:54)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1653)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1629)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:295)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 19 common frames omitted
+2022-09-05 14:56:05 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 3340 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 14:56:05 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 14:56:07 - INFO - Starting service [Tomcat]
+2022-09-05 14:56:07 - INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 14:56:07 - INFO - Initializing Spring embedded WebApplicationContext
+2022-09-05 14:56:07 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 14:56:07 - INFO - HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-05 14:56:07 - INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-05 14:56:08 - INFO - HikariPool-1 - Starting...
+2022-09-05 14:56:08 - INFO - HikariPool-1 - Start completed.
+2022-09-05 14:56:08 - INFO - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-09-05 14:56:08 - ERROR - Failed to initialize JPA EntityManagerFactory: mappedBy reference an unknown target entity property: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser.dUser in com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser.dUsers
+2022-09-05 14:56:08 - INFO - HikariPool-1 - Shutdown initiated...
+2022-09-05 14:56:08 - INFO - HikariPool-1 - Shutdown completed.
+2022-09-05 14:56:08 - INFO - Stopping service [Tomcat]
+2022-09-05 14:56:08 - ERROR - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser.dUser in com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser.dUsers
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.nseit.DoctorAppointmentBookingSpringBootAPI.DoctorAppointmentBookingSpringBootApiApplication.main(DoctorAppointmentBookingSpringBootApiApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser.dUser in com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser.dUsers
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:875)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:826)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:54)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1653)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1629)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:295)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 19 common frames omitted
+2022-09-05 15:25:06 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 19648 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 15:25:06 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 15:25:08 - INFO - Starting service [Tomcat]
+2022-09-05 15:25:08 - INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 15:25:08 - INFO - Initializing Spring embedded WebApplicationContext
+2022-09-05 15:25:08 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 15:25:08 - INFO - HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-05 15:25:08 - INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-05 15:25:08 - INFO - HikariPool-1 - Starting...
+2022-09-05 15:25:08 - INFO - HikariPool-1 - Start completed.
+2022-09-05 15:25:08 - INFO - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-09-05 15:25:09 - ERROR - Failed to initialize JPA EntityManagerFactory: mappedBy reference an unknown target entity property: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.Doctor.dUser in com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser.dUsers
+2022-09-05 15:25:09 - INFO - HikariPool-1 - Shutdown initiated...
+2022-09-05 15:25:09 - INFO - HikariPool-1 - Shutdown completed.
+2022-09-05 15:25:09 - INFO - Stopping service [Tomcat]
+2022-09-05 15:25:09 - ERROR - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.Doctor.dUser in com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser.dUsers
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.nseit.DoctorAppointmentBookingSpringBootAPI.DoctorAppointmentBookingSpringBootApiApplication.main(DoctorAppointmentBookingSpringBootApiApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.Doctor.dUser in com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser.dUsers
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:875)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:826)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:54)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1653)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1629)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:295)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 19 common frames omitted
+2022-09-05 15:25:58 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 12096 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 15:25:58 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 15:26:01 - INFO - Starting service [Tomcat]
+2022-09-05 15:26:01 - INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 15:26:01 - INFO - Initializing Spring embedded WebApplicationContext
+2022-09-05 15:26:01 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 15:26:01 - INFO - HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-05 15:26:01 - INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-05 15:26:01 - INFO - HikariPool-1 - Starting...
+2022-09-05 15:26:02 - INFO - HikariPool-1 - Start completed.
+2022-09-05 15:26:02 - INFO - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-09-05 15:26:02 - ERROR - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Repeated column in mapping for entity: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.Patient column: user_id (should be mapped with insert="false" update="false")
+2022-09-05 15:26:02 - INFO - HikariPool-1 - Shutdown initiated...
+2022-09-05 15:26:02 - INFO - HikariPool-1 - Shutdown completed.
+2022-09-05 15:26:02 - INFO - Stopping service [Tomcat]
+2022-09-05 15:26:02 - ERROR - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Repeated column in mapping for entity: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.Patient column: user_id (should be mapped with insert="false" update="false")
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.nseit.DoctorAppointmentBookingSpringBootAPI.DoctorAppointmentBookingSpringBootApiApplication.main(DoctorAppointmentBookingSpringBootApiApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Repeated column in mapping for entity: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.Patient column: user_id (should be mapped with insert="false" update="false")
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 19 common frames omitted
+Caused by: org.hibernate.MappingException: Repeated column in mapping for entity: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.Patient column: user_id (should be mapped with insert="false" update="false")
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:895)
+	at org.hibernate.mapping.PersistentClass.checkPropertyColumnDuplication(PersistentClass.java:913)
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:935)
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:637)
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:267)
+	at org.hibernate.boot.internal.MetadataImpl.validate(MetadataImpl.java:359)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:314)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 23 common frames omitted
+2022-09-05 15:26:41 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 13496 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 15:26:41 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 15:26:43 - INFO - Starting service [Tomcat]
+2022-09-05 15:26:43 - INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 15:26:43 - INFO - Initializing Spring embedded WebApplicationContext
+2022-09-05 15:26:43 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 15:26:43 - INFO - HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-05 15:26:43 - INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-05 15:26:43 - INFO - HikariPool-1 - Starting...
+2022-09-05 15:26:44 - INFO - HikariPool-1 - Start completed.
+2022-09-05 15:26:44 - INFO - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-09-05 15:26:45 - INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-05 15:26:46 - INFO - Started DoctorAppointmentBookingSpringBootApiApplication in 5.139 seconds (JVM running for 5.613)
+2022-09-05 15:53:20 - INFO - Stopping service [Tomcat]
+2022-09-05 15:53:20 - INFO - HikariPool-1 - Shutdown initiated...
+2022-09-05 15:53:20 - INFO - HikariPool-1 - Shutdown completed.
+2022-09-05 15:53:20 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 13496 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 15:53:20 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 15:53:20 - ERROR - Application run failed
+java.lang.TypeNotPresentException: Type com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95) ~[na:na]
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1243) ~[na:na]
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:501) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.core.GenericTypeResolver.buildTypeVariableMap(GenericTypeResolver.java:271) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.core.GenericTypeResolver.getTypeVariableMap(GenericTypeResolver.java:248) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.data.util.ClassTypeInformation.getTypeVariableMap(ClassTypeInformation.java:120) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.util.ClassTypeInformation.getTypeVariableMap(ClassTypeInformation.java:109) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.util.ClassTypeInformation.<init>(ClassTypeInformation.java:96) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at java.base/java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:330) ~[na:na]
+	at org.springframework.data.util.ClassTypeInformation.from(ClassTypeInformation.java:73) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.<init>(AbstractRepositoryMetadata.java:63) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:50) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:78) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:104) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:159) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-2.7.3.jar:2.7.3]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-5.3.22.jar:5.3.22]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:395) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:157) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.3.jar:2.7.3]
+	at com.nseit.DoctorAppointmentBookingSpringBootAPI.DoctorAppointmentBookingSpringBootApiApplication.main(DoctorAppointmentBookingSpringBootApiApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+Caused by: java.lang.ClassNotFoundException: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:488) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:488) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:114) ~[na:na]
+	... 43 common frames omitted
+2022-09-05 15:53:53 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 9956 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 15:53:53 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 15:53:55 - INFO - Starting service [Tomcat]
+2022-09-05 15:53:55 - INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 15:53:55 - INFO - Initializing Spring embedded WebApplicationContext
+2022-09-05 15:53:56 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 15:53:56 - INFO - HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-05 15:53:56 - INFO - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-05 15:53:56 - INFO - HikariPool-1 - Starting...
+2022-09-05 15:53:56 - INFO - HikariPool-1 - Start completed.
+2022-09-05 15:53:56 - INFO - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-09-05 15:53:57 - INFO - HHH000182: No default (no-argument) constructor for class: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.HUser (class must be instantiated by Interceptor)
+2022-09-05 15:53:57 - INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-05 15:53:59 - INFO - Started DoctorAppointmentBookingSpringBootApiApplication in 5.54 seconds (JVM running for 6.034)
+2022-09-05 16:02:08 - INFO - Stopping service [Tomcat]
+2022-09-05 16:02:08 - INFO - HikariPool-1 - Shutdown initiated...
+2022-09-05 16:02:08 - INFO - HikariPool-1 - Shutdown completed.
+2022-09-05 16:02:09 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 9956 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 16:02:09 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 16:02:09 - ERROR - Application run failed
+java.lang.TypeNotPresentException: Type com.nseit.DoctorAppointmentBookingSpringBootAPI.model.Appointment not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95) ~[na:na]
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1243) ~[na:na]
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:501) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.core.GenericTypeResolver.buildTypeVariableMap(GenericTypeResolver.java:271) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.core.GenericTypeResolver.getTypeVariableMap(GenericTypeResolver.java:248) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.data.util.ClassTypeInformation.getTypeVariableMap(ClassTypeInformation.java:120) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.util.ClassTypeInformation.getTypeVariableMap(ClassTypeInformation.java:109) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.util.ClassTypeInformation.<init>(ClassTypeInformation.java:96) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at java.base/java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:330) ~[na:na]
+	at org.springframework.data.util.ClassTypeInformation.from(ClassTypeInformation.java:73) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.<init>(AbstractRepositoryMetadata.java:63) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:50) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:78) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:104) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:159) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-2.7.3.jar:2.7.3]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-5.3.22.jar:5.3.22]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:395) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:157) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.3.jar:2.7.3]
+	at com.nseit.DoctorAppointmentBookingSpringBootAPI.DoctorAppointmentBookingSpringBootApiApplication.main(DoctorAppointmentBookingSpringBootApiApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+Caused by: java.lang.ClassNotFoundException: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.Appointment
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:488) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:488) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:114) ~[na:na]
+	... 43 common frames omitted
+2022-09-05 16:11:58 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 9956 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 16:11:58 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 16:11:58 - ERROR - Application run failed
+java.lang.TypeNotPresentException: Type com.nseit.DoctorAppointmentBookingSpringBootAPI.model.Specialization not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95) ~[na:na]
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1243) ~[na:na]
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:501) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.core.GenericTypeResolver.buildTypeVariableMap(GenericTypeResolver.java:271) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.core.GenericTypeResolver.getTypeVariableMap(GenericTypeResolver.java:248) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.data.util.ClassTypeInformation.getTypeVariableMap(ClassTypeInformation.java:120) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.util.ClassTypeInformation.getTypeVariableMap(ClassTypeInformation.java:109) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.util.ClassTypeInformation.<init>(ClassTypeInformation.java:96) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at java.base/java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:330) ~[na:na]
+	at org.springframework.data.util.ClassTypeInformation.from(ClassTypeInformation.java:73) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.<init>(AbstractRepositoryMetadata.java:63) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:50) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:78) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:104) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:159) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-2.7.3.jar:2.7.3]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-5.3.22.jar:5.3.22]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:395) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:157) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.3.jar:2.7.3]
+	at com.nseit.DoctorAppointmentBookingSpringBootAPI.DoctorAppointmentBookingSpringBootApiApplication.main(DoctorAppointmentBookingSpringBootApiApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+Caused by: java.lang.ClassNotFoundException: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.Specialization
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:488) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:488) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:114) ~[na:na]
+	... 43 common frames omitted
+2022-09-05 16:17:34 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 9956 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 16:17:34 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 16:17:34 - INFO - Starting service [Tomcat]
+2022-09-05 16:17:34 - INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 16:17:34 - INFO - Initializing Spring embedded WebApplicationContext
+2022-09-05 16:17:34 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 16:17:34 - INFO - HikariPool-2 - Starting...
+2022-09-05 16:17:34 - INFO - HikariPool-2 - Start completed.
+2022-09-05 16:17:34 - INFO - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-09-05 16:17:34 - INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-05 16:17:34 - INFO - Started DoctorAppointmentBookingSpringBootApiApplication in 0.469 seconds (JVM running for 1421.79)
+2022-09-05 16:55:54 - INFO - Stopping service [Tomcat]
+2022-09-05 16:55:54 - INFO - HikariPool-2 - Shutdown initiated...
+2022-09-05 16:55:54 - INFO - HikariPool-2 - Shutdown completed.
+2022-09-05 16:55:54 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 9956 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 16:55:54 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 16:55:54 - INFO - Starting service [Tomcat]
+2022-09-05 16:55:54 - INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 16:55:54 - INFO - Initializing Spring embedded WebApplicationContext
+2022-09-05 16:55:54 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 16:55:54 - INFO - HikariPool-3 - Starting...
+2022-09-05 16:55:54 - INFO - HikariPool-3 - Start completed.
+2022-09-05 16:55:54 - INFO - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-09-05 16:55:54 - INFO - HHH000182: No default (no-argument) constructor for class: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.AuthUser (class must be instantiated by Interceptor)
+2022-09-05 16:55:54 - INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-05 16:55:55 - INFO - HikariPool-3 - Shutdown initiated...
+2022-09-05 16:55:55 - INFO - HikariPool-3 - Shutdown completed.
+2022-09-05 16:55:55 - INFO - Stopping service [Tomcat]
+2022-09-05 16:55:55 - ERROR - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authController' defined in file [D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes\com\nseit\DoctorAppointmentBookingSpringBootAPI\controller\AuthController.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.nseit.DoctorAppointmentBookingSpringBootAPI.controller.AuthController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@5b32b168]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.3.jar:2.7.3]
+	at com.nseit.DoctorAppointmentBookingSpringBootAPI.DoctorAppointmentBookingSpringBootApiApplication.main(DoctorAppointmentBookingSpringBootApiApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.nseit.DoctorAppointmentBookingSpringBootAPI.controller.AuthController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@5b32b168]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:743) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:675) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.buildPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:407) ~[spring-orm-5.3.22.jar:5.3.22]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:388) ~[spring-orm-5.3.22.jar:5.3.22]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(PersistenceAnnotationBeanPostProcessor.java:335) ~[spring-orm-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.3.22.jar:5.3.22]
+	... 18 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/nseit/DoctorAppointmentBookingSpringBootAPI/service/UserService
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3329) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2403) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:738) ~[spring-core-5.3.22.jar:5.3.22]
+	... 24 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.nseit.DoctorAppointmentBookingSpringBootAPI.service.UserService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:488) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 28 common frames omitted
+2022-09-05 16:56:12 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 9956 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 16:56:12 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 16:56:13 - INFO - Starting service [Tomcat]
+2022-09-05 16:56:13 - INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 16:56:13 - INFO - Initializing Spring embedded WebApplicationContext
+2022-09-05 16:56:13 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 16:56:13 - INFO - HikariPool-4 - Starting...
+2022-09-05 16:56:13 - INFO - HikariPool-4 - Start completed.
+2022-09-05 16:56:13 - INFO - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-09-05 16:56:13 - INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-05 16:56:13 - INFO - Started DoctorAppointmentBookingSpringBootApiApplication in 0.466 seconds (JVM running for 3740.153)
+2022-09-05 16:56:17 - INFO - Stopping service [Tomcat]
+2022-09-05 16:56:17 - INFO - HikariPool-4 - Shutdown initiated...
+2022-09-05 16:56:17 - INFO - HikariPool-4 - Shutdown completed.
+2022-09-05 16:56:17 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 9956 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 16:56:17 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 16:56:17 - INFO - Starting service [Tomcat]
+2022-09-05 16:56:17 - INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 16:56:17 - INFO - Initializing Spring embedded WebApplicationContext
+2022-09-05 16:56:18 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 16:56:18 - INFO - HikariPool-5 - Starting...
+2022-09-05 16:56:18 - INFO - HikariPool-5 - Start completed.
+2022-09-05 16:56:18 - INFO - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-09-05 16:56:18 - INFO - HHH000182: No default (no-argument) constructor for class: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.AuthUser (class must be instantiated by Interceptor)
+2022-09-05 16:56:18 - INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-05 16:56:18 - INFO - HikariPool-5 - Shutdown initiated...
+2022-09-05 16:56:18 - INFO - HikariPool-5 - Shutdown completed.
+2022-09-05 16:56:18 - INFO - Stopping service [Tomcat]
+2022-09-05 16:56:18 - ERROR - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authController' defined in file [D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes\com\nseit\DoctorAppointmentBookingSpringBootAPI\controller\AuthController.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.nseit.DoctorAppointmentBookingSpringBootAPI.controller.AuthController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@514aedd2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.3.jar:2.7.3]
+	at com.nseit.DoctorAppointmentBookingSpringBootAPI.DoctorAppointmentBookingSpringBootApiApplication.main(DoctorAppointmentBookingSpringBootApiApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.nseit.DoctorAppointmentBookingSpringBootAPI.controller.AuthController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@514aedd2]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:743) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:675) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.buildPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:407) ~[spring-orm-5.3.22.jar:5.3.22]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:388) ~[spring-orm-5.3.22.jar:5.3.22]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(PersistenceAnnotationBeanPostProcessor.java:335) ~[spring-orm-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.3.22.jar:5.3.22]
+	... 18 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/nseit/DoctorAppointmentBookingSpringBootAPI/service/UserService
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3329) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2403) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:738) ~[spring-core-5.3.22.jar:5.3.22]
+	... 24 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.nseit.DoctorAppointmentBookingSpringBootAPI.service.UserService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:488) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 28 common frames omitted
+2022-09-05 16:58:36 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 9956 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 16:58:36 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 16:58:36 - INFO - Starting service [Tomcat]
+2022-09-05 16:58:36 - INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 16:58:36 - INFO - Initializing Spring embedded WebApplicationContext
+2022-09-05 16:58:36 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 16:58:36 - INFO - HikariPool-6 - Starting...
+2022-09-05 16:58:36 - INFO - HikariPool-6 - Start completed.
+2022-09-05 16:58:36 - INFO - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-09-05 16:58:36 - INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-05 16:58:36 - INFO - Started DoctorAppointmentBookingSpringBootApiApplication in 0.369 seconds (JVM running for 3883.731)
+2022-09-05 16:58:41 - INFO - Stopping service [Tomcat]
+2022-09-05 16:58:41 - INFO - HikariPool-6 - Shutdown initiated...
+2022-09-05 16:58:41 - INFO - HikariPool-6 - Shutdown completed.
+2022-09-05 16:58:41 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 9956 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 16:58:41 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 16:58:41 - INFO - Starting service [Tomcat]
+2022-09-05 16:58:41 - INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 16:58:41 - INFO - Initializing Spring embedded WebApplicationContext
+2022-09-05 16:58:41 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 16:58:41 - INFO - HikariPool-7 - Starting...
+2022-09-05 16:58:41 - INFO - HikariPool-7 - Start completed.
+2022-09-05 16:58:41 - INFO - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-09-05 16:58:41 - INFO - HHH000182: No default (no-argument) constructor for class: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.AuthUser (class must be instantiated by Interceptor)
+2022-09-05 16:58:41 - INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-05 16:58:41 - INFO - HikariPool-7 - Shutdown initiated...
+2022-09-05 16:58:41 - INFO - HikariPool-7 - Shutdown completed.
+2022-09-05 16:58:41 - INFO - Stopping service [Tomcat]
+2022-09-05 16:58:41 - ERROR - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authController' defined in file [D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes\com\nseit\DoctorAppointmentBookingSpringBootAPI\controller\AuthController.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.nseit.DoctorAppointmentBookingSpringBootAPI.controller.AuthController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@4a915f89]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.3.jar:2.7.3]
+	at com.nseit.DoctorAppointmentBookingSpringBootAPI.DoctorAppointmentBookingSpringBootApiApplication.main(DoctorAppointmentBookingSpringBootApiApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.nseit.DoctorAppointmentBookingSpringBootAPI.controller.AuthController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@4a915f89]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:743) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:675) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.buildPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:407) ~[spring-orm-5.3.22.jar:5.3.22]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:388) ~[spring-orm-5.3.22.jar:5.3.22]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(PersistenceAnnotationBeanPostProcessor.java:335) ~[spring-orm-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.3.22.jar:5.3.22]
+	... 18 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/nseit/DoctorAppointmentBookingSpringBootAPI/service/UserService
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3329) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2403) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:738) ~[spring-core-5.3.22.jar:5.3.22]
+	... 24 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.nseit.DoctorAppointmentBookingSpringBootAPI.service.UserService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:488) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 28 common frames omitted
+2022-09-05 16:59:27 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 9956 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 16:59:27 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 16:59:27 - INFO - Starting service [Tomcat]
+2022-09-05 16:59:27 - INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 16:59:27 - INFO - Initializing Spring embedded WebApplicationContext
+2022-09-05 16:59:27 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 16:59:27 - INFO - HikariPool-8 - Starting...
+2022-09-05 16:59:27 - INFO - HikariPool-8 - Start completed.
+2022-09-05 16:59:27 - INFO - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-09-05 16:59:27 - INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-05 16:59:27 - INFO - Started DoctorAppointmentBookingSpringBootApiApplication in 0.369 seconds (JVM running for 3934.354)
+2022-09-05 16:59:31 - INFO - Stopping service [Tomcat]
+2022-09-05 16:59:31 - INFO - HikariPool-8 - Shutdown initiated...
+2022-09-05 16:59:31 - INFO - HikariPool-8 - Shutdown completed.
+2022-09-05 16:59:31 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 9956 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 16:59:31 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 16:59:31 - INFO - Starting service [Tomcat]
+2022-09-05 16:59:31 - INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 16:59:31 - INFO - Initializing Spring embedded WebApplicationContext
+2022-09-05 16:59:31 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 16:59:31 - INFO - HikariPool-9 - Starting...
+2022-09-05 16:59:31 - INFO - HikariPool-9 - Start completed.
+2022-09-05 16:59:31 - INFO - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-09-05 16:59:31 - INFO - HHH000182: No default (no-argument) constructor for class: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.AuthUser (class must be instantiated by Interceptor)
+2022-09-05 16:59:31 - INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-05 16:59:31 - INFO - HikariPool-9 - Shutdown initiated...
+2022-09-05 16:59:31 - INFO - HikariPool-9 - Shutdown completed.
+2022-09-05 16:59:31 - INFO - Stopping service [Tomcat]
+2022-09-05 16:59:31 - ERROR - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field bCryptPasswordEncoder in com.nseit.DoctorAppointmentBookingSpringBootAPI.dataloader.SetupDataLoader required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+
+2022-09-05 17:01:02 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 9956 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 17:01:02 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 17:01:02 - INFO - Starting service [Tomcat]
+2022-09-05 17:01:02 - INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 17:01:02 - INFO - Initializing Spring embedded WebApplicationContext
+2022-09-05 17:01:02 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 17:01:02 - INFO - HikariPool-10 - Starting...
+2022-09-05 17:01:02 - INFO - HikariPool-10 - Start completed.
+2022-09-05 17:01:02 - INFO - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-09-05 17:01:02 - INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-05 17:01:02 - INFO - Started DoctorAppointmentBookingSpringBootApiApplication in 0.395 seconds (JVM running for 4029.465)
+2022-09-05 17:01:06 - INFO - Stopping service [Tomcat]
+2022-09-05 17:01:06 - INFO - HikariPool-10 - Shutdown initiated...
+2022-09-05 17:01:06 - INFO - HikariPool-10 - Shutdown completed.
+2022-09-05 17:01:06 - INFO - Starting DoctorAppointmentBookingSpringBootApiApplication using Java 18.0.2 on DELL-C2HFFL3 with PID 9956 (D:\Project\DoctorAppointmentBookingSpringBootAPI\target\classes started by Administrator in D:\Project\DoctorAppointmentBookingSpringBootAPI)
+2022-09-05 17:01:06 - INFO - No active profile set, falling back to 1 default profile: "default"
+2022-09-05 17:01:06 - INFO - Starting service [Tomcat]
+2022-09-05 17:01:06 - INFO - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 17:01:06 - INFO - Initializing Spring embedded WebApplicationContext
+2022-09-05 17:01:06 - INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 17:01:06 - INFO - HikariPool-11 - Starting...
+2022-09-05 17:01:06 - INFO - HikariPool-11 - Start completed.
+2022-09-05 17:01:06 - INFO - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-09-05 17:01:06 - INFO - HHH000182: No default (no-argument) constructor for class: com.nseit.DoctorAppointmentBookingSpringBootAPI.model.AuthUser (class must be instantiated by Interceptor)
+2022-09-05 17:01:06 - INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-05 17:01:06 - INFO - HikariPool-11 - Shutdown initiated...
+2022-09-05 17:01:06 - INFO - HikariPool-11 - Shutdown completed.
+2022-09-05 17:01:06 - INFO - Stopping service [Tomcat]
+2022-09-05 17:01:06 - ERROR - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field bCryptPasswordEncoder in com.nseit.DoctorAppointmentBookingSpringBootAPI.service.UserService required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+
