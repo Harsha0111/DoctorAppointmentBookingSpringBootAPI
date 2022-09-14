@@ -9,6 +9,9 @@ public class ErrorResponse {
     private String message;
     private String description;
 
+    public ErrorResponse() {
+    }
+
     public ErrorResponse(String message, String description) {
         this.message = message;
         this.description = description;

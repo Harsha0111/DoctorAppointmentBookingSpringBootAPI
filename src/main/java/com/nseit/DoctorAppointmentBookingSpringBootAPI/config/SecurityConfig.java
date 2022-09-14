@@ -4,6 +4,7 @@ import com.nseit.DoctorAppointmentBookingSpringBootAPI.model.Role;
 import com.nseit.DoctorAppointmentBookingSpringBootAPI.service.HospitalUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -43,12 +44,10 @@ public class SecurityConfig {
                 .authorizeRequests()
                 .antMatchers("/api/auth/**")
                 .permitAll()
-                .and()
-                .authorizeRequests()
-                .antMatchers("/api/doctor/**")
-                .hasAnyRole(Role.ROLE_DOCTOR)
-                .anyRequest()
-                .authenticated()
+//                .and()
+//                .authorizeRequests()
+//                .anyRequest()
+//                .authenticated()
                 .and().httpBasic()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 

@@ -14,7 +14,7 @@ public class Appointment {
     @GeneratedValue
     private Integer id;
     private String date;
-    private Boolean approved;
+    private Boolean approved = true;
 
     @JsonIgnore
     @ManyToOne

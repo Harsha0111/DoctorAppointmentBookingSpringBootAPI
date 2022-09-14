@@ -17,9 +17,9 @@ public class AuthUser {
     @Id
     @GeneratedValue
     private Integer id;
-
     private String userName;
     private String fullName;
+    private String email;
     private String password;
     private Integer age;
 
@@ -31,15 +31,19 @@ public class AuthUser {
     private Set<Role> roles;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "dUser", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "authUser", cascade = CascadeType.ALL)
     private Set<Doctor> dUsers;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "pUser",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "authUser",cascade = CascadeType.ALL)
     private Set<Patient> pUsers;
+
+    public AuthUser() {
+    }
 
     public AuthUser(String userName, String password) {
         this.userName = userName;
         this.password = password;
     }
+
 }

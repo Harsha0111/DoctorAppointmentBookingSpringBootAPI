@@ -13,12 +13,12 @@ public class Doctor {
     @Id
     @GeneratedValue
     private Integer id;
-    private String doctorName;
+    private Integer experience;
 
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private AuthUser dUser;
+    private AuthUser authUser;
 
     @JsonIgnore
     @ManyToOne

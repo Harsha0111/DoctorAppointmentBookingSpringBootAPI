@@ -34,6 +34,7 @@ public class HospitalUserDetailsService implements UserDetailsService {
     private static List<SimpleGrantedAuthority> buildSimpleGrantedAuthorities(final Set<Role> roles) {
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
         for (Role role : roles) {
+//            authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
             authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getName()));
         }
         return authorities;
